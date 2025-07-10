@@ -1,58 +1,78 @@
 body {
-  background-color: #0e0e0e;
-  color: #00ff99;
-  font-family: monospace;
   margin: 0;
   padding: 0;
+  background-color: #0d0d0d;
+  color: #00ff99;
+  font-family: monospace;
 }
 
-.container {
+a {
+  color: #00ffff;
+}
+
+.resume-container {
   max-width: 900px;
   margin: auto;
   padding: 2rem;
 }
 
-a {
-  color: #00ffff;
-  text-decoration: none;
-}
-
-ul {
-  padding-left: 1.5rem;
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+  border-bottom: 1px solid #00ff99;
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
 .profile-pic {
-  width: 160px;
+  width: 140px;
+  height: 140px;
   border-radius: 50%;
   border: 2px solid #00ff99;
-  margin-bottom: 20px;
-  display: block;
+  object-fit: cover;
 }
 
-h1 {
+.header-text h1 {
+  margin: 0;
   font-size: 2.5rem;
-  margin-bottom: 0;
 }
 
-h2 {
+.certs {
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+.contact {
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+.section {
   margin-top: 2rem;
+}
+
+.section h2 {
   border-bottom: 1px solid #00ff99;
-  padding-bottom: 0.3rem;
+  padding-bottom: 5px;
+  margin-bottom: 1rem;
 }
 
-h3 {
-  margin-top: 1rem;
+.section h3 {
+  margin-top: 1.2rem;
+  margin-bottom: 0.3rem;
   font-size: 1.1rem;
-  color: #66ffcc;
+  color: #66ffc2;
 }
 
-.certs, .contact {
-  margin: 1rem 0;
+ul {
+  padding-left: 1.2rem;
 }
 
-.dedication {
+.footer {
   margin-top: 3rem;
   text-align: center;
-  color: #00ffee;
   font-size: 1.1rem;
+  color: #00ffee;
 }
