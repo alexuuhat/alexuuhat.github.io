@@ -1,3 +1,4 @@
+/* Base Styles */
 body {
   margin: 0;
   padding: 0;
@@ -8,6 +9,7 @@ body {
 
 a {
   color: #00ffff;
+  text-decoration: none;
 }
 
 .resume-container {
@@ -16,6 +18,7 @@ a {
   padding: 2rem;
 }
 
+/* Header Section */
 .header {
   display: flex;
   flex-wrap: wrap;
@@ -36,6 +39,7 @@ a {
 .header-text h1 {
   margin: 0;
   font-size: 2.5rem;
+  color: #66ffc2;
 }
 
 .certs {
@@ -48,30 +52,78 @@ a {
   margin-top: 0.5rem;
 }
 
+/* Section Titles */
 .section {
-  margin-top: 2rem;
+  margin-top: 2.5rem;
 }
 
 .section h2 {
   border-bottom: 1px solid #00ff99;
   padding-bottom: 5px;
   margin-bottom: 1rem;
+  color: #00ffaa;
 }
 
-.section h3 {
-  margin-top: 1.2rem;
-  margin-bottom: 0.3rem;
-  font-size: 1.1rem;
-  color: #66ffc2;
-}
-
+/* Lists */
 ul {
-  padding-left: 1.2rem;
+  padding-left: 1.5rem;
 }
 
-.footer {
-  margin-top: 3rem;
-  text-align: center;
+/* Experience Section */
+.experience-section .job-card {
+  border-left: 3px solid #00ff99;
+  padding-left: 1rem;
+  margin-bottom: 2rem;
+  background: rgba(0, 255, 153, 0.03);
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+  border-radius: 6px;
+  box-shadow: 0 0 4px rgba(0, 255, 153, 0.2);
+}
+
+.job-title {
   font-size: 1.1rem;
-  color: #00ffee;
+  font-weight: bold;
+  color: #66ffc2;
+  margin-bottom: 2px;
+}
+
+.job-meta {
+  font-size: 0.9rem;
+  color: #99ffcc;
+  margin-bottom: 6px;
+}
+
+.job-year {
+  float: right;
+  color: #00ffaa;
+  font-size: 0.85rem;
+}
+
+/* PDF Download Icon */
+.pdf-icon {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  font-size: 26px;
+  background-color: #00ff99;
+  color: #0d0d0d;
+  padding: 8px 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 999;
+  box-shadow: 0 0 10px #00ff99;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pdf-icon:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 15px #00ffaa;
+}
+
+/* Print View: Hide Floating Icon */
+@media print {
+  .pdf-icon {
+    display: none;
+  }
 }
