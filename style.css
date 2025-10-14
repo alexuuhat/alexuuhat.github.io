@@ -100,28 +100,67 @@ ul {
   font-size: 0.85rem;
 }
 
-/* PDF Download Icon */
+/* Glowing Download Button */
 .pdf-icon {
   position: fixed;
   top: 20px;
   right: 20px;
-  font-size: 26px;
-  background-color: #00ff99;
-  color: #0d0d0d;
-  padding: 8px 10px;
+  width: 60px;
+  height: 60px;
+  background: radial-gradient(circle at center, #111 50%, #0d0d0d 100%);
   border-radius: 50%;
+  box-shadow: 0 0 20px 4px rgba(0, 255, 100, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
   z-index: 999;
-  box-shadow: 0 0 10px #00ff99;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: all 0.25s ease;
 }
 
+/* Blue inner icon box */
+.download-arrow {
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(to bottom, #4fa3ff, #007bff);
+  border-radius: 8px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Clean white download arrow */
+.download-arrow::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 10px solid #fff;
+  top: 10px;
+}
+
+.download-arrow::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 2px;
+  background: #fff;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+/* Hover glow */
 .pdf-icon:hover {
-  transform: scale(1.15);
-  box-shadow: 0 0 15px #00ffaa;
+  transform: scale(1.1);
+  box-shadow: 0 0 25px 8px rgba(0, 255, 150, 0.8);
 }
 
-/* Print View: Hide Floating Icon */
+/* Hide on print */
 @media print {
   .pdf-icon {
     display: none;
