@@ -25,7 +25,7 @@ a {
   align-items: center;
   gap: 20px;
   padding-bottom: 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 0;
 }
 
 .profile-pic {
@@ -118,7 +118,6 @@ ul {
   transition: all 0.25s ease;
 }
 
-/* Blue inner icon box */
 .download-arrow {
   width: 36px;
   height: 36px;
@@ -130,7 +129,6 @@ ul {
   justify-content: center;
 }
 
-/* Clean white download arrow */
 .download-arrow::before {
   content: "";
   position: absolute;
@@ -154,15 +152,92 @@ ul {
   border-radius: 2px;
 }
 
-/* Hover glow */
 .pdf-icon:hover {
   transform: scale(1.1);
   box-shadow: 0 0 25px 8px rgba(0, 255, 150, 0.8);
 }
 
-/* Hide on print */
+/* =============================================
+   PRINT STYLES
+   ============================================= */
+@page {
+  size: A4;
+  margin: 0;
+}
+
 @media print {
-  .pdf-icon {
-    display: none;
+  *,
+  *::before,
+  *::after {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
   }
+
+  html, body {
+    background-color: #0d0d0d !important;
+    color: #00ff99 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 210mm !important;
+  }
+
+  .pdf-icon {
+    display: none !important;
+  }
+
+  .resume-container {
+    max-width: 100% !important;
+    width: 210mm !important;
+    padding: 12mm 14mm !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  .header {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: flex-start !important;
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+    background-color: #0d0d0d !important;
+  }
+
+  .profile-pic {
+    border: 2px solid #00ff99 !important;
+    border-radius: 50% !important;
+  }
+
+  .header-text h1 { color: #66ffc2 !important; }
+  .certs          { color: #00ff99 !important; }
+  .contact        { color: #00ff99 !important; }
+  a               { color: #00ffff !important; }
+
+  .section {
+    margin-top: 2.5rem !important;
+    background-color: #0d0d0d !important;
+  }
+
+  .section h2 {
+    color: #00ffaa !important;
+    border-bottom: 1px solid #00ff99 !important;
+    background-color: #0d0d0d !important;
+  }
+
+  .section h4 { color: #66ffc2 !important; background-color: #0d0d0d !important; }
+  .section p  { color: #00ff99 !important; background-color: #0d0d0d !important; }
+  .section ul,
+  .section li { color: #00ff99 !important; background-color: #0d0d0d !important; }
+
+  .experience-section .job-card {
+    background-color: #0a1a10 !important;
+    border-left: 3px solid #00ff99 !important;
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  .job-title { color: #66ffc2 !important; }
+  .job-meta  { color: #99ffcc !important; }
+  .job-year  { color: #00ffaa !important; }
+  .job-card p { color: #00ff99 !important; }
 }
